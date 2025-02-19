@@ -1,6 +1,6 @@
 ```markdown
 ### Core
-1. [ ] Create foundational HTML template for frame UI  
+1. [x] Create foundational HTML template for frame UI  
    **Validation:** Basic frame structure visible in browser
 2. [ ] Setup server endpoint to handle POST requests  
    **Validation:** POST requests received at `/api/frame`

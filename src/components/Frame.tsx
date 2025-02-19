@@ -22,17 +22,29 @@ import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
 import { PROJECT_TITLE } from "~/lib/constants";
 
-function ExampleCard() {
+function FrameContent() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Welcome to the Frame Template</CardTitle>
-        <CardDescription>
-          This is an example card that you can customize or remove
+    <Card className="border-2 border-purple-500 dark:border-purple-400">
+      <CardHeader className="space-y-1">
+        <CardTitle className="text-xl font-bold text-center">
+          Interactive Frame Example
+        </CardTitle>
+        <CardDescription className="text-center">
+          Click the buttons below to interact
         </CardDescription>
       </CardHeader>
-      <CardContent>
-        <Label>Place content in a Card here.</Label>
+      <CardContent className="space-y-4">
+        <div className="grid grid-cols-2 gap-2">
+          <button className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors">
+            Option 1
+          </button>
+          <button className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600 transition-colors">
+            Option 2
+          </button>
+        </div>
+        <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+          Frame interactions will be handled here
+        </div>
       </CardContent>
     </Card>
   );
@@ -137,10 +149,15 @@ export default function Frame() {
       }}
     >
       <div className="w-[300px] mx-auto py-2 px-2">
-        <h1 className="text-2xl font-bold text-center mb-4 text-gray-700 dark:text-gray-300">
-          {PROJECT_TITLE}
-        </h1>
-        <ExampleCard />
+        <div className="mb-4 space-y-2">
+          <h1 className="text-2xl font-bold text-center text-gray-700 dark:text-gray-300">
+            {PROJECT_TITLE}
+          </h1>
+          <p className="text-sm text-center text-gray-500 dark:text-gray-400">
+            Frame Status: {added ? 'Added ✅' : 'Not Added ❌'}
+          </p>
+        </div>
+        <FrameContent />
       </div>
     </div>
   );
